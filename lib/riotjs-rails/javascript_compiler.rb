@@ -12,7 +12,7 @@ module Riot
         runner_path: File.expand_path('../../support/riot_node_runner.js', __FILE__),
       )
 
-      COMPILER_PATH = File.expand_path('../../support/riot_compiler.js', __FILE__)
+      COMPILER_PATH = File.expand_path('../../support/compiler/compiler.js', __FILE__)
 
       def compile(source_code)
         source_code = escape_javascript(source_code)

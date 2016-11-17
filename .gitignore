@@ -1,3 +1,9 @@
 *.gem
 .bundle
 Gemfile.lock
+
+# Files copied from riot-compiler submodule
+lib/support/compiler/
+
+# Files copied from riot submodule
+vendor/assets/javascripts/

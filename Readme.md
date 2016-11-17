@@ -71,4 +71,14 @@ You should see `Seconds Elapsed: 0` changing the number after each second.
 
 ## Contributing
 
+Riot.js components are included in the project as git submodules.  The assets
+and compiler files are copied into the gem tree.  Run the following rake task
+to set up the submodules and copy those files into place:
+
+```
+$ rake setup
+```
+
+Prerequisites:  make, nodejs, and npm
+
 Contributions are welcome, please follow [GitHub Flow](https://guides.github.com/introduction/flow/index.html)

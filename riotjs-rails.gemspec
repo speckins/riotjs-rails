@@ -14,7 +14,10 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "riotjs-rails"
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = %w{Gemfile LICENSE.md Readme.md Rakefile}
+  s.files        += Dir['lib/riotjs-rails.rb', 'lib/riotjs-rails/**/*']
+  s.files        += Dir['lib/support/**/*']
+  s.files        += Dir['vendor/**/*']
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
