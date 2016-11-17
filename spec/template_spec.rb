@@ -16,11 +16,10 @@ TAG
 
   it 'works' do
     expected = <<-JS
-riot.tag('message', '<p>{ begin } { end }</p>', function(opts) {
+riot.tag2('message', '<p>{begin} {end}</p>', '', '', function(opts) {
 
   this.begin = 'Hello';
   this.end = "world";
-
 });
 JS
     expect(template.render).to eq(expected)
