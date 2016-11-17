@@ -1,3 +1,6 @@
 [submodule "lib/riot"]
 	path = lib/riot
 	url = git@github.com:riot/riot.git
+[submodule "lib/riot-compiler"]
+	path = lib/riot-compiler
+	url = git@github.com:riot/compiler.git
