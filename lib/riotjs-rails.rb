@@ -1,5 +1,5 @@
 require "riotjs-rails/version"
-require "riotjs-rails/template"
+require "riotjs-rails/sprockets"
 
 module Riot
   module Rails
@@ -7,9 +7,7 @@ module Riot
       class Rails::Engine < ::Rails::Engine
 
         config.after_initialize do |app|
-          if app.assets.respond_to? :register_engine
-            app.assets.register_engine '.tag', Riot::Rails::Template
-          end
+          Riot::Sprockets.register_riotjs app.assets
         end
 
       end
