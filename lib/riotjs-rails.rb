@@ -6,8 +6,10 @@ module Riot
     if defined?(::Rails) and Gem::Requirement.new('>= 3.1').satisfied_by?(Gem::Version.new ::Rails.version)
       class Rails::Engine < ::Rails::Engine
 
-        initializer :setup_riotjs do |app|
-          app.assets.register_engine '.tag', Riot::Rails::Template
+        config.after_initialize do |app|
+          if app.assets.respond_to? :register_engine
+            app.assets.register_engine '.tag', Riot::Rails::Template
+          end
         end
 
       end
