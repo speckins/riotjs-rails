@@ -6,8 +6,10 @@ module Riot
     if defined?(::Rails) and ::Rails.respond_to?(:version) and Gem::Requirement.new('>= 3.1').satisfied_by?(Gem::Version.new ::Rails.version)
       class Rails::Engine < ::Rails::Engine
 
-        config.after_initialize do |app|
-          Riot::Sprockets.register_riotjs app.assets
+        initializer :setup_riotjs do |app|
+          config.assets.configure do |env|
+            Riot::Sprockets.register_riotjs env
+          end
         end
 
       end
